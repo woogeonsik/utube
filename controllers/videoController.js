@@ -42,7 +42,7 @@ export const videoDetail = async (req, res) => {
     const video = await Video.findById(id);
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
-    res.redirect(routes.home);
+    res.redirect(routes.home)
   }
 };
 
@@ -54,7 +54,7 @@ export const getEditVideo = async (req, res) => {
     const video = await Video.findById(id);
     res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
   } catch (error) {
-    res.redirect(routes.home);
+  res.redirect(routes.home);
   }
 };
 
