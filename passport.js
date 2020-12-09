@@ -25,7 +25,14 @@ passport.deserializeUser(User.deserializeUser());
 passport.serializeUser(function (user, done) {
   done(null, user);
 });
-
+/*
 passport.deserializeUser(function (user, done) {
   done(null, user);
+});
+*/
+
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
 });
